@@ -13,13 +13,13 @@
     <div class="container mx-auto px-6 py-4 flex items-center justify-between">
       <a href="/" class="text-2xl font-bold text-blue-600">CitizenAI</a>
       <nav class="flex items-center space-x-6 text-gray-600">
-        <a href="/index" class="text-blue-600 font-medium">Home</a>
-        <a href="/about" class="hover:text-blue-600">About</a>
-        <a href="/services" class="hover:text-blue-600">Services</a>
-        <a href="/chat" class="hover:text-blue-600">Chat</a>
+        <a href="./index" class="text-blue-600 font-medium">Home</a>
+        <a href="./about" class="hover:text-blue-600">About</a>
+        <a href="./services" class="hover:text-blue-600">Services</a>
+        <a href="./chat" class="hover:text-blue-600">Chat</a>
         
         {% if 'user' in session %}
-          <a href="/dashboard" class="hover:text-blue-600">Dashboard</a>
+          <a href="./dashboard" class="hover:text-blue-600">Dashboard</a>
         {% endif %}
         
         <div class="flex items-center">
@@ -27,9 +27,9 @@
             <div class="mr-4">
               <span class="text-sm">Hi, {{ session.user.first_name }}</span>
             </div>
-            <a href="/logout" class="hover:text-blue-600">Logout</a>
+            <a href="./logout" class="hover:text-blue-600">Logout</a>
           {% else %}
-            <a href="/login" class="hover:text-blue-600">Login</a>
+            <a href="./login" class="hover:text-blue-600">Login</a>
           {% endif %}
         </div>
       </nav>
@@ -50,10 +50,10 @@
         and civic rights - all in plain language.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="/chat" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-md transition">
+        <a href="./chat" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-md transition">
           Start a Chat
         </a>
-        <a href="/services" class="px-6 py-3 border border-gray-300 bg-white hover:bg-gray-50 font-medium rounded-lg shadow-sm transition">
+        <a href="./services" class="px-6 py-3 border border-gray-300 bg-white hover:bg-gray-50 font-medium rounded-lg shadow-sm transition">
           Explore Services
         </a>
       </div>
@@ -248,4 +248,5 @@
 
   <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </body>
+
 </html>
