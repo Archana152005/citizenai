@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CitizenAI - Empower Your Civic Engagement</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="bg-gray-50">
+  <!-- Navigation -->
+  <header class="bg-white shadow-sm">
+    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/" class="text-2xl font-bold text-blue-600">CitizenAI</a>
+      <nav class="flex items-center space-x-6 text-gray-600">
+        <a href="/index" class="text-blue-600 font-medium">Home</a>
+        <a href="/about" class="hover:text-blue-600">About</a>
+        <a href="/services" class="hover:text-blue-600">Services</a>
+        <a href="/chat" class="hover:text-blue-600">Chat</a>
+        
+        {% if 'user' in session %}
+          <a href="/dashboard" class="hover:text-blue-600">Dashboard</a>
+        {% endif %}
+        
+        <div class="flex items-center">
+          {% if 'user' in session %}
+            <div class="mr-4">
+              <span class="text-sm">Hi, {{ session.user.first_name }}</span>
+            </div>
+            <a href="/logout" class="hover:text-blue-600">Logout</a>
+          {% else %}
+            <a href="/login" class="hover:text-blue-600">Login</a>
+          {% endif %}
+        </div>
+      </nav>
+      <div class="md:hidden">
+        <button id="mobileMenuBtn" class="p-2 rounded-md hover:bg-gray-100">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="py-16 bg-gradient-to-r from-blue-50 to-white">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+        Expert Guidance for <span class="text-blue-600">Every Citizen</span>
+      </h1>
+      <p class="text-xl text-gray-700 max-w-2xl mx-auto mb-8">
+        Get personalized help with housing issues, benefits claims, legal questions, 
+        and civic rights - all in plain language.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="/chat" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-md transition">
+          Start a Chat
+        </a>
+        <a href="/services" class="px-6 py-3 border border-gray-300 bg-white hover:bg-gray-50 font-medium rounded-lg shadow-sm transition">
+          Explore Services
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">How CitizenAI Works</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center p-6">
+          <div class="bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">1</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Describe Your Situation</h3>
+          <p class="text-gray-600">
+            Explain your issue in everyday language. Our AI understands complex situations.
+          </p>
+        </div>
+        <div class="text-center p-6">
+          <div class="bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">2</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Get Actionable Advice</h3>
+          <p class="text-gray-600">
+            Receive step-by-step guidance tailored to your specific circumstances.
+          </p>
+        </div>
+        <div class="text-center p-6">
+          <div class="bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">3</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Take Confident Action</h3>
+          <p class="text-gray-600">
+            Generate ready-to-use documents and letters to assert your rights.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Preview -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Common Issues We Help With</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+          <div class="p-6">
+            <div class="bg-blue-100 text-blue-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Housing & Tenant Rights</h3>
+            <p class="text-gray-600 mb-4">
+              Security deposits, repairs, eviction notices, rent increases, and landlord disputes.
+            </p>
+            <a href="/services#housing" class="text-blue-600 hover:underline">Learn more →</a>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+          <div class="p-6">
+            <div class="bg-green-100 text-green-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Benefits & Assistance</h3>
+            <p class="text-gray-600 mb-4">
+              SNAP, unemployment, Medicaid, disability, and other government assistance programs.
+            </p>
+            <a href="/services#benefits" class="text-blue-600 hover:underline">Learn more →</a>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+          <div class="p-6">
+            <div class="bg-purple-100 text-purple-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Legal Rights & Protections</h3>
+            <p class="text-gray-600 mb-4">
+              Consumer rights, workplace issues, discrimination, and civil liberties.
+            </p>
+            <a href="/services#legal" class="text-blue-600 hover:underline">Learn more →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">What Citizens Are Saying</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <div class="flex items-center mb-4">
+            <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16"></div>
+            <div class="ml-4">
+              <h4 class="font-semibold">Maria J.</h4>
+              <div class="flex text-yellow-400">
+                ★★★★★
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600">
+            "CitizenAI helped me draft a formal complaint to my landlord about needed repairs. 
+            Within a week, the issues were fixed! I felt empowered and supported."
+          </p>
+        </div>
+        
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <div class="flex items-center mb-4">
+            <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16"></div>
+            <div class="ml-4">
+              <h4 class="font-semibold">David T.</h4>
+              <div class="flex text-yellow-400">
+                ★★★★★
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600">
+            "I was confused about appealing a benefits denial. CitizenAI walked me through 
+            the process and generated all the forms I needed. Saved me hours of research!"
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-12">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-white text-lg font-semibold mb-4">CitizenAI</h3>
+          <p class="mb-4">Empowering citizens with AI-driven guidance for civic issues and rights protection.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white">
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+              </svg>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white">
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-white text-lg font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="/" class="hover:text-white">Home</a></li>
+            <li><a href="/about" class="hover:text-white">About Us</a></li>
+            <li><a href="/services" class="hover:text-white">Services</a></li>
+            <li><a href="/chat" class="hover:text-white">Chat Assistance</a></li>
+            <li><a href="/login" class="hover:text-white">Login</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-white text-lg font-semibold mb-4">Legal Help</h3>
+          <ul class="space-y-2">
+            <li><a href="/services#housing" class="hover:text-white">Housing Issues</a></li>
+            <li><a href="/services#benefits" class="hover:text-white">Benefits Assistance</a></li>
+            <li><a href="/services#legal" class="hover:text-white">Legal Rights</a></li>
+            <li><a href="/services#safety" class="hover:text-white">Safety Concerns</a></li>
+            <li><a href="/services#consumer" class="hover:text-white">Consumer Protection</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-white text-lg font-semibold mb-4">Contact Us</h3>
+          <p class="mb-2">Have questions or need support?</p>
+          <p class="mb-4">Email: <a href="mailto:help@citizenai.example" class="text-blue-400 hover:underline">help@citizenai.example</a></p>
+          <p>Community Support Line: <span class="font-mono">1-800-CITIZEN</span></p>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+        <p>&copy; 2025 CitizenAI. All rights reserved. Built for people, powered by responsible AI.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>

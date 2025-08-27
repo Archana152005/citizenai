@@ -1,0 +1,27 @@
+/* Mobile Menu Panel Animation */
+#mobileMenuPanel div {
+  transition: transform 0.3s ease-out;
+}
+
+/* Chat Interface Styling */
+#chat-history::-webkit-scrollbar {
+  width: 6px;
+}
+
+#chat-history::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+#chat-history::-webkit-scrollbar-thumb {
+  background: #c5c5c5;
+  border-radius: 3px;
+}
+
+#chat-history::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Dashboard Chart Containers */
+canvas {
+  max-width: 100%;
+}

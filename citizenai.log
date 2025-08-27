@@ -1,0 +1,34 @@
+2025-08-11 17:02:04,802 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-11 17:02:04,802 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-11 17:04:00,296 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-11 17:04:00,296 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-11 17:04:52,764 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-11 17:04:52,766 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-11 17:05:41,855 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-11 17:05:41,855 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-11 17:05:48,646 - INFO - 127.0.0.1 - - [11/Aug/2025 17:05:48] "GET / HTTP/1.1" 200 -
+2025-08-11 17:05:48,724 - INFO - 127.0.0.1 - - [11/Aug/2025 17:05:48] "GET /static/js/scripts.js HTTP/1.1" 200 -
+2025-08-11 17:05:48,724 - INFO - 127.0.0.1 - - [11/Aug/2025 17:05:48] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-08-11 17:05:50,809 - INFO - 127.0.0.1 - - [11/Aug/2025 17:05:50] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-11 17:06:01,975 - INFO - 127.0.0.1 - - [11/Aug/2025 17:06:01] "GET /chat HTTP/1.1" 200 -
+2025-08-11 17:06:02,007 - INFO - 127.0.0.1 - - [11/Aug/2025 17:06:02] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2025-08-11 17:06:05,352 - INFO - 127.0.0.1 - - [11/Aug/2025 17:06:05] "[32mGET /dashboard HTTP/1.1[0m" 302 -
+2025-08-11 17:06:05,388 - INFO - 127.0.0.1 - - [11/Aug/2025 17:06:05] "GET /login HTTP/1.1" 200 -
+2025-08-11 17:06:13,196 - INFO - 127.0.0.1 - - [11/Aug/2025 17:06:13] "GET /services HTTP/1.1" 200 -
+2025-08-11 17:06:13,227 - INFO - 127.0.0.1 - - [11/Aug/2025 17:06:13] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2025-08-11 17:06:15,976 - INFO - 127.0.0.1 - - [11/Aug/2025 17:06:15] "GET /about HTTP/1.1" 200 -
+2025-08-11 17:06:16,008 - INFO - 127.0.0.1 - - [11/Aug/2025 17:06:16] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2025-08-11 17:06:18,025 - INFO - 127.0.0.1 - - [11/Aug/2025 17:06:18] "[32mGET /dashboard HTTP/1.1[0m" 302 -
+2025-08-11 17:06:18,032 - INFO - 127.0.0.1 - - [11/Aug/2025 17:06:18] "GET /login HTTP/1.1" 200 -
+2025-08-11 17:06:23,152 - INFO - 127.0.0.1 - - [11/Aug/2025 17:06:23] "[32mGET /dashboard HTTP/1.1[0m" 302 -
+2025-08-11 17:06:23,166 - INFO - 127.0.0.1 - - [11/Aug/2025 17:06:23] "GET /login HTTP/1.1" 200 -
+2025-08-11 17:06:27,818 - INFO - 127.0.0.1 - - [11/Aug/2025 17:06:27] "[32mGET /dashboard HTTP/1.1[0m" 302 -
+2025-08-11 17:06:27,828 - INFO - 127.0.0.1 - - [11/Aug/2025 17:06:27] "GET /login HTTP/1.1" 200 -
+2025-08-11 17:07:08,336 - INFO - 127.0.0.1 - - [11/Aug/2025 17:07:08] "[32mGET /dashboard HTTP/1.1[0m" 302 -
+2025-08-11 17:07:08,344 - INFO - 127.0.0.1 - - [11/Aug/2025 17:07:08] "GET /login HTTP/1.1" 200 -
+2025-08-11 17:07:17,272 - INFO - 127.0.0.1 - - [11/Aug/2025 17:07:17] "[32mGET /dashboard HTTP/1.1[0m" 302 -
+2025-08-11 17:07:17,278 - INFO - 127.0.0.1 - - [11/Aug/2025 17:07:17] "GET /login HTTP/1.1" 200 -
